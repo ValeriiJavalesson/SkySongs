@@ -1,0 +1,19 @@
+main .main-content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+main .main-content table {
+  width: 96%;
+  margin-top: 25px;
+}
+main .main-content table th,
+main .main-content table td {
+  border: solid 1px black;
+  font-size: 4vw;
+  padding: 2px 17px;
+}
+main .main-content table tr:hover {
+  background-color: aquamarine;
+}/*# sourceMappingURL=allsongs.css.map */

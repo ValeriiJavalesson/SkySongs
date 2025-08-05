@@ -14,7 +14,7 @@
 	rel="stylesheet">
 <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css"
 	rel="stylesheet">
-<link rel="stylesheet" href="style/css/registration.css">
+<link rel="stylesheet" href="style/css/login.css">
 	<script
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 	<script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>

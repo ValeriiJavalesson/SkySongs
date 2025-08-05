@@ -26,7 +26,14 @@ public class Song implements Serializable {
 	private Integer number;
 	@Column
 	private String title;
-	@Column
+	@Column(length = 5000)
 	private String text;
+	
+	@Override
+	public String toString() {
+		return "Song [id=" + id + ", number=" + number + ", title=" + title + "]";
+	}
+	
+	
 
 }

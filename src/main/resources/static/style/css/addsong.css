@@ -1,0 +1,46 @@
+div.new_song_form_wrap {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+div.new_song_form_wrap .new_song_form {
+  display: flex;
+  width: 96%;
+  font-size: 3em;
+  flex-direction: column;
+  align-items: center;
+}
+div.new_song_form_wrap .new_song_form div {
+  width: 100%;
+  margin-bottom: 0.5rem;
+}
+div.new_song_form_wrap .new_song_form div input {
+  width: 100%;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 7px 10px 13px 0px #1f3a76;
+}
+div.new_song_form_wrap .new_song_form div textarea {
+  resize: none;
+  min-height: 50vh;
+  width: 100%;
+  margin-top: 5rem;
+  border: solid 1px gray;
+  box-shadow: 0px 0px 20px 0px #00005f;
+  border-radius: 14px;
+  padding: 10px;
+  field-sizing: content;
+}
+div.new_song_form_wrap .new_song_form #fake_textarea {
+  border: solid 1px black;
+  border-radius: 5px;
+  width: 95vw;
+  min-height: 50vh;
+  box-shadow: 0px 0px 20px 0px #00005f;
+  border-radius: 14px;
+  padding: 10px;
+  font-size: 3rem;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}/*# sourceMappingURL=addsong.css.map */

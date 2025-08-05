@@ -27,13 +27,13 @@
 					<div class="collapse justify-content-end" id="navbarSupportedContent">
 					<%-- 		<security:authorize access="hasAnyRole('ROLE_ADMIN', 'ROLE_USER')">		--%>			
 										
-								<div class="logout_button">
+								<!-- <div class="logout_button">
 									<div class="qr-code" onclick="toggleQR()">QR-КОД</div>
 									
-								</div>
+								</div> -->
 							<security:authorize access="isAuthenticated()">		
 								<div class="logout_button">
-									<a href="<c:url value="/addsong" />" class="">Додати ♫</a>
+									<a href="<c:url value="/addsong?id=0" />" class="">Додати ♫</a>
 								</div>		
 								<div class="logout_button">
 									<a href="<c:url value="/logout" />" class="">Вийти</a>
@@ -42,7 +42,7 @@
 							</security:authorize> 
 							<security:authorize access="!isAuthenticated()">				
 								<div class="logout_button">
-									<a href="<c:url value="/login" />" class="">Ввійти</a>
+									<a href="<c:url value="/login" />" class="">Авторизація</a>
 								</div>
 							</security:authorize> 
 							

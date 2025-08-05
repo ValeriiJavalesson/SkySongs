@@ -21,17 +21,4 @@ form button {
   margin-top: 3rem;
   line-height: 9rem;
   width: 32rem;
-}
-
-main a {
-  font-size: 3em;
-  border-radius: 1rem;
-  margin-top: 3rem;
-  line-height: 9rem;
-  width: 32rem;
-  text-decoration: none !important;
-  color: black !important;
-  border: solid 1px black;
-  text-align: center;
-  background-color: aquamarine;
-}/*# sourceMappingURL=registration.css.map */
+}/*# sourceMappingURL=login.css.map */

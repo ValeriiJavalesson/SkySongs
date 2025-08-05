@@ -20,6 +20,8 @@
 </head>
 <body>
 <jsp:include page="header.jsp"></jsp:include>	
+<main>
+
 	<div class="container d-flex flex-column align-items-center">
 		<h1 class="m-3"></h1>
 
@@ -30,46 +32,46 @@
 				<div class="m-3 col-5">
 					<div class="mb-3">
 						<div class="d-flex justify-content-between">
-							<label for="inputFirstName" class="form-label">Ім’я</label>
+							<label for="inputFirstName" class="">Ім’я</label>
 							<div class="errorMessage text-danger" hidden='true'></div>
 						</div>
-						<input type="text" class="form-control" id="inputFirstName"
+						<input type="text" class="" id="inputFirstName"
 							name="firstname">
 					</div>
 					<div class="mb-3">
 						<div class="d-flex justify-content-between">
-							<label for="inputLastName" class="form-label">Прізвище</label>
+							<label for="inputLastName" class="">Прізвище</label>
 							<div class="errorMessage text-danger" hidden='true'></div>
 						</div>
-						<input type="text" class="form-control" id="inputLastName"
+						<input type="text" class="" id="inputLastName"
 							name="lastname">
 					</div>
 					<div class="mb-3">
 						<div class="d-flex justify-content-between">
-							<label for="inputEmail" class="form-label">Логін-email</label>
+							<label for="inputEmail" class="">Логін-email</label>
 							<div class="errorMessage text-danger" hidden='true'>Invalid email</div>
 							<div class="isPresent text-danger" hidden='true'>Email is already registered</div>
 						</div>
-						<input type="text" class="form-control" id="inputEmail"
+						<input type="text" class="" id="inputEmail"
 							aria-describedby="emailHelp" name="email">
 					</div>
 					<div class="mb-3">
 						<div class="d-flex justify-content-between">
-							<label for="inputPassword" class="form-label">Пароль</label>
+							<label for="inputPassword" class="">Пароль</label>
 							<div class="errorMessage text-danger" hidden='true'>Password must contain at least 6 characters</div>
 						</div>
-						<input type="password" class="form-control" id="inputPassword"
+						<input type="password" class="" id="inputPassword"
 							name="password">
 					</div>
 					<button name="submit" type="button" value="submit"
-						class="btn btn-primary" onclick='checkForm()'>Зареєструватися</button>
+						class="" onclick='checkForm()'>Зареєструватися</button>
 				</div>
 			</div>
 
 		</form:form>
-		<a href="login" type="button" class="btn btn-light border border-1 m-5">На
-			сторінку входу</a>
+		<a href="login" type="button" class="">На сторінку входу</a>
 	</div>
+</main>
 
 	<script src="js/registration.js"></script>
 </body>

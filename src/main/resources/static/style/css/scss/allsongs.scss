@@ -1,0 +1,28 @@
+main {
+
+    .main-content {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        table {
+            width: 96%;
+            margin-top: 25px;
+
+            th,
+            td {
+                border: solid 1px black;
+                font-size: 4vw;
+                padding: 2px 17px;
+            }
+
+            tr {
+                &:hover {
+                    background-color: aquamarine;
+                }
+            }
+        }
+    }
+
+}
