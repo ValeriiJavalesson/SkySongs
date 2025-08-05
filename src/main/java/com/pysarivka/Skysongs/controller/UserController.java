@@ -1,9 +1,11 @@
 package com.pysarivka.Skysongs.controller;
 
+import java.util.Comparator;
+import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.ui.Model;
@@ -16,17 +18,17 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.pysarivka.Skysongs.domain.Song;
 import com.pysarivka.Skysongs.domain.User;
 import com.pysarivka.Skysongs.service.impl.SongServiceImpl;
 import com.pysarivka.Skysongs.service.impl.UserServiceImpl;
-
 
 @RestController
 public class UserController {
 
 	@Autowired
 	private SongServiceImpl songServiceImpl;
-	
+
 	@Autowired
 	private UserServiceImpl userServiceImpl;
 
@@ -34,11 +36,18 @@ public class UserController {
 	public ModelAndView init() {
 		return allsongs();
 	}
-	
+
 	@RequestMapping("/allsongs")
 	public ModelAndView allsongs() {
 		ModelAndView model = new ModelAndView("allsongs");
-		model.addObject("songs", songServiceImpl.findAllSongs());
+		List<Song> allSongs = songServiceImpl.findAllSongs();
+//		List<Song> sortedSongs = allSongs.stream().sorted(Comparator.comparing(Song::getNumber))
+//				.collect(Collectors.toList());
+		List<Song> sortedSongs = allSongs.stream()
+				.sorted(Comparator.comparingDouble(obj -> Double.parseDouble(obj.getNumber())))
+				.collect(Collectors.toList());
+		model.addObject("songs", sortedSongs);
+
 		return model;
 	}
 
@@ -75,10 +84,6 @@ public class UserController {
 		userServiceImpl.updateUser(user);
 		return "login?registered=succesfully";
 	}
-
-
-
-
 
 	@GetMapping("/api/getcurrentuser")
 	public String getUser() {

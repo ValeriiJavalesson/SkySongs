@@ -1,7 +1,5 @@
 package com.pysarivka.Skysongs.controller;
 
-import java.util.List;
-import java.util.Comparator;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,12 +23,13 @@ public class SongController {
 	@PreAuthorize("hasAuthority('ROLE_USER')")
 	public ModelAndView addsong(@RequestParam("id") Long id) {
 		ModelAndView model = new ModelAndView("addsong");
-		List<Song> allSongs = songServiceImpl.findAllSongs();
 		
-		Optional<Song> optionalMaxValueSong = allSongs.stream().max(Comparator.comparing(Song::getNumber));
-		if (optionalMaxValueSong.isPresent()) {
-			model.addObject("maxNumberSong", optionalMaxValueSong.get());
-		}
+//		List<Song> allSongs = songServiceImpl.findAllSongs();
+		
+//		Optional<Song> optionalMaxValueSong = allSongs.stream().max(Comparator.comparing(Song::getNumber));
+//		if (optionalMaxValueSong.isPresent()) {
+//			model.addObject("maxNumberSong", optionalMaxValueSong.get());
+//		}
 
 		if (id == null) {
 			return model;
@@ -55,12 +54,6 @@ public class SongController {
 				newSong = optionalSong.get();
 			}
 		}
-		List<Song> allSongs = songServiceImpl.findAllSongs();
-		Optional<Song> first = allSongs.stream().filter(s-> s.getId()>song.getId()).findFirst();
-		Long lastId = 0L;
-		if(first.isPresent()) {
-			lastId = first.get().getId();
-		}
 		newSong.setNumber(song.getNumber());
 		newSong.setText(song.getText());
 		newSong.setTitle(song.getTitle());
@@ -70,7 +63,7 @@ public class SongController {
 		} else {
 			songServiceImpl.saveSong(newSong);
 		}
-		return "addsong?id="+lastId;
+		return "addsong?id=0";
 	}
 
 	@RequestMapping("/song")
@@ -91,5 +84,13 @@ public class SongController {
 		songServiceImpl.deleteSongById((long) id);
 		return "Видалено!";
 	}
+	
+	@RequestMapping(value = "/isSongPresent", method = RequestMethod.GET)
+	@PreAuthorize("hasAuthority('ROLE_USER')")
+	public Boolean isSongPresent(@RequestParam Double number) {
+		return songServiceImpl.findAllSongs().stream().anyMatch(s->Double.parseDouble(s.getNumber())==number);
+	}
+	
+	
 
 }

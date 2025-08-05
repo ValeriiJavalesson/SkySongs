@@ -17,10 +17,11 @@
 		<div class="new_song_form_wrap">		
 				<div class="new_song_form" >
 				<div><input name="newSongId" type="number" hidden="hidden" value="${song.id}"></div>
-				<c:choose>				
+				<%-- <c:choose>				
 					<c:when test="${song.id>0}"><div><input placeholder="Номер в пісен2" name="number" type="number" class="" value="${song.number}"> </div></c:when>
 					<c:otherwise><div><input placeholder="Номер в пісенникуs" name="number" type="number" class="" value="${maxNumberSong.number + 1}"> </div></c:otherwise>
-				</c:choose>
+				</c:choose> --%>
+				<div><input placeholder="Номер в пісеннику" name="number" type="number" class="" value="${song.number}"> </div>
 				
 				<div><input placeholder="Назва пісні" name="title" type="text" class="" value="${song.title}"> </div>
 				<%-- <div><textarea placeholder="Текст пісні" name="text" class="">${song.text}</textarea></div> --%>

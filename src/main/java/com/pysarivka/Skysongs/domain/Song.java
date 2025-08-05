@@ -10,7 +10,6 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.Data;
-import lombok.NonNull;
 
 @Entity
 @Table
@@ -23,7 +22,7 @@ public class Song implements Serializable {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	@Column(unique = true)
-	private Integer number;
+	private String number;
 	@Column
 	private String title;
 	@Column(length = 5000)
